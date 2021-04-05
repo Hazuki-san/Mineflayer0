@@ -72,14 +72,14 @@ const NowPlaying =  () => {
 }
 
 const reFish =  () => {
+  bot.chat("refishing again due to clearlag reset")
   startFishing()
 }
 
+bot.on('nowplayingdetected', NowPlaying)
 bot.on('clearlagged', reFish)
-
 bot.on('message', (cm) => {
 	console.log(cm.toString())
-	bot.on('nowplayingdetected', NowPlaying)
 	if (cm.toString().includes(bot.username)) return
 	if (cm.toString().includes(botowner)) {
 	  if (cm.toString().includes('!startfish')) {
