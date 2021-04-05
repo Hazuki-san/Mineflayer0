@@ -3,5 +3,6 @@
 	"ip": "mc-zero.net",
 	"port": 25565,
 	"name": "FishingBOT",
-	"authme_pw": "Test01384"
+	"authme_pw": "Test01384",
+	"version": "1.8.9"
 }
