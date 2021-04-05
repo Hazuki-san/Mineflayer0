@@ -11,6 +11,7 @@ var port = data["port"]
 var username = data["name"]
 var version = data["version"]
 var authmepassword = data["authme_pw"]
+var botowner = data["botowner"]
 
 const mineflayer = require('mineflayer')
 const {
@@ -59,6 +60,12 @@ bot.chatAddPattern(
   'we know that we logged in'
 )
 
+bot.chatAddPattern(
+  /(ขยะจะถูกเก็บอีกครั้งภายใน 10 นาที)/,
+  'clearlagged',
+  'trashcan system fwherufhoewri'
+)
+
 const NowPlaying =  () => {
   //console.log("less go")
   setTimeout(goSkyblock, 500);
@@ -66,26 +73,36 @@ const NowPlaying =  () => {
 
 bot.on('nowplayingdetected', NowPlaying)
 
-bot.on('message', (cm) => {
-  if (cm.toString().includes('!startfish')) {
-  	bot.chat("/home")
-  	bot.chat("i love fishing so much :D")
-    startFishing()
-  }
+const reFish =  () => {
+  startFishing()
+}
 
-  if (cm.toString().includes('!stopfish')) {
-  	bot.chat("ok, no more fishing")
-    stopFishing()
-  }
+bot.on('clearlagged', reFish)
 
-  if (cm.toString().includes('!eat')) {
-    eat()
-  }
+bot.on('message', (username, cm) => {
+	if (username === bot.username) return
+	if (username !== botowner) return
+	if (username === botowner) {
+	  if (cm.toString().includes('!startfish')) {
+  		bot.chat("/home")
+  		bot.chat("i love fishing so much :D")
+	    startFishing()
+	  }
 
-  const item = itemByName("fish")
-  if (cm.toString().includes('!tossall')) {
-  	bot.tossStack(item, checkIfTossed)
-  }
+	  if (cm.toString().includes('!stopfish')) {
+  		bot.chat("ok, no more fishing")
+    	stopFishing()
+  	  }
+
+	  if (cm.toString().includes('!eat')) {
+	    eat()
+	  }
+
+  	  const item = itemByName("fish")
+	  if (cm.toString().includes('!tossall')) {
+	  	bot.tossStack(item, checkIfTossed)
+  		}
+  	}
 })
 
 
