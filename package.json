@@ -6,6 +6,8 @@
     "node": "^14"
   },
   "dependencies": {
+    "config": "^3.3.3",
+    "fs": "0.0.1-security",
     "mineflayer": "^2.20.0",
     "mineflayer-pathfinder": "^1.6.0",
     "minecraft-data": "^2.82.2",

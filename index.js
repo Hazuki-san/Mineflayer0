@@ -1,6 +1,7 @@
 console.log("initializing...")
 
 // Config Initialize
+const fs = require('fs');
 let rawdata = fs.readFileSync('config.json');
 let data = JSON.parse(rawdata);
 
