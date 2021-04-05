@@ -79,10 +79,9 @@ const reFish =  () => {
 
 bot.on('clearlagged', reFish)
 
-bot.on('message', (username, cm) => {
-	if (username === bot.username) return
-	if (username !== botowner) return
-	if (username === botowner) {
+bot.on('message', (cm) => {
+	if (cm.toString().includes(bot.username)) return
+	if (cm.toString().includes(botowner)) {
 	  if (cm.toString().includes('!startfish')) {
   		bot.chat("/home")
   		bot.chat("i love fishing so much :D")
