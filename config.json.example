@@ -1,6 +1,7 @@
 {
-	"ip": "mc-zero.net",		// ไอพีเซิร์ฟที่จะเชื่อม
-	"port": 25565,			// พอร์ตของเซิร์ฟเวอร์
-	"name": "FishingBOT",		// ชื่อในเกม
-	"authme_pw": "Test01384"	// รหัสผ่านเข้าสู่ระบบ (/login)
+	"_INFO_READ_THIS_": "IP คือเซิร์ฟที่จะเชื่อม | Port คือ พอร์ตของเซิร์ฟเวอร์ | Name คือ ชื่อของตัวละคร | AuthMe_PW คือ รหัสผ่านของ /login",
+	"ip": "mc-zero.net",
+	"port": 25565,
+	"name": "FishingBOT",
+	"authme_pw": "Test01384"
 }
