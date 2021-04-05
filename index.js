@@ -73,8 +73,8 @@ const NowPlaying =  () => {
 
 const reFish =  () => {
   bot.chat("refishing again due to clearlag reset")
-  stopFishing()
-  startFishing()
+  setTimeout(stopFishing, 500);
+  setTimeout(startFishing, 500);
 }
 
 bot.on('nowplayingdetected', NowPlaying)
