@@ -110,6 +110,7 @@ let nowFishing = false
 function onCollect (player, entity) {
   if (entity.kind === 'Drops' && player === bot.entity) {
     bot.removeListener('playerCollect', onCollect)
+    stopFishing()
     startFishing()
   }
 }
