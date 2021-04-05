@@ -86,12 +86,12 @@ bot.on('message', (cm) => {
 	  if (cm.toString().includes('!startfish')) {
   		bot.chat("/home")
   		bot.chat("i love fishing so much :D")
-	    startFishing()
+	    setTimeout(startFishing, 500);
 	  }
 
 	  if (cm.toString().includes('!stopfish')) {
   		bot.chat("ok, no more fishing")
-    	stopFishing()
+    	setTimeout(stopFishing, 500);
   	  }
 
 	  if (cm.toString().includes('!eat')) {
@@ -111,7 +111,7 @@ let nowFishing = false
 function onCollect (player, entity) {
   if (entity.kind === 'Drops' && player === bot.entity) {
     bot.removeListener('playerCollect', onCollect)
-    startFishing()
+    setTimeout(startFishing, 500);
   }
 }
 
