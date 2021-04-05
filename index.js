@@ -73,6 +73,7 @@ const NowPlaying =  () => {
 
 const reFish =  () => {
   bot.chat("refishing again due to clearlag reset")
+  stopFishing()
   startFishing()
 }
 
@@ -110,7 +111,6 @@ let nowFishing = false
 function onCollect (player, entity) {
   if (entity.kind === 'Drops' && player === bot.entity) {
     bot.removeListener('playerCollect', onCollect)
-    stopFishing()
     startFishing()
   }
 }
