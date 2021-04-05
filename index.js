@@ -35,7 +35,7 @@ const defaultMove = new Movements(bot, mcData)
 bot.loadPlugin(pathfinder)
 
 function goSkyblock () {
-  bot.activateItem()
+  setTimeout(bot.activateItem, 500);
   bot.on('windowOpen', async (window) => {
   	window.requiresConfirmation = false // fix
   	await bot.clickWindow(21, 0, 0)
@@ -61,7 +61,7 @@ bot.chatAddPattern(
 )
 
 bot.chatAddPattern(
-  /(ขยะจะถูกเก็บอีกครั้งภายใน 10 นาที)/,
+  /(ขยะจะถูกเก็บอีกครั้งภายใน)/,
   'clearlagged',
   'trashcan system fwherufhoewri'
 )
@@ -71,8 +71,6 @@ const NowPlaying =  () => {
   setTimeout(goSkyblock, 500);
 }
 
-bot.on('nowplayingdetected', NowPlaying)
-
 const reFish =  () => {
   startFishing()
 }
@@ -80,6 +78,8 @@ const reFish =  () => {
 bot.on('clearlagged', reFish)
 
 bot.on('message', (cm) => {
+	console.log(cm.toString())
+	bot.on('nowplayingdetected', NowPlaying)
 	if (cm.toString().includes(bot.username)) return
 	if (cm.toString().includes(botowner)) {
 	  if (cm.toString().includes('!startfish')) {
