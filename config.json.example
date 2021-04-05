@@ -1,8 +1,14 @@
 {
-	"_INFO_READ_THIS_": "IP คือเซิร์ฟที่จะเชื่อม | Port คือ พอร์ตของเซิร์ฟเวอร์ | Name คือ ชื่อของตัวละคร | AuthMe_PW คือ รหัสผ่านของ /login",
+	"_WHAT_IS_IP_": "IP คือเซิร์ฟที่จะเชื่อม เช่น mc-zero.net",
 	"ip": "mc-zero.net",
+	"_WHAT_IS_PORT_": "Port คือ พอร์ตของเซิร์ฟเวอร์ ส่วนใหญ่จะใช้ 25565",
 	"port": 25565,
+	"_WHAT_IS_NAME_": "Name คือ ชื่อของผู้เล่น (บอท) ที่จะเข้าเซิร์ฟเวอร์",
 	"name": "FishingBOT",
-	"authme_pw": "Test01384",
-	"version": "1.8.9"
+	"_WHAT_IS_AUTHME_PW_": "authme_pw คือ รหัสเข้า (/login) ของไอดีเซิร์ฟเวอร์นั้นๆ",
+	"authme_pw": "01384",
+	"_WHAT_IS_VERSION_": "Version คือ เวอร์ชั่นของตัวเกมที่บอทจะใช้",
+	"version": "1.8.9",
+	"_WHAT_IS_BOTOWNER_": "BotOwner คือ คนคุมบอท มีแค่เพียงคนเดียวเท่านั้น",
+	"botowner": "Hoap"
 }
